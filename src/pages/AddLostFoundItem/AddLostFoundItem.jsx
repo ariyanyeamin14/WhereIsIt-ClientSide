@@ -2,6 +2,8 @@ import React, { useContext, useRef, useState } from 'react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { AuthContex } from '../../Providers/AuthProvider';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const AddLostFoundItem = () => {
     const { user } = useContext(AuthContex)
@@ -33,7 +35,19 @@ const AddLostFoundItem = () => {
             contactName,
             contactEmail,
         };
-        console.log(itemData)
+
+        axios.post('http://localhost:5000/items', itemData)
+            .then(res => {
+                console.log(res.data)
+                if (res.data.acknowledged) {
+                    Swal.fire({
+                        title: "Your item has been posted",
+                        icon: "success",
+                        draggable: true
+                    })
+                    form.reset()
+                }
+            })
     }
     return (
         <div className="hero bg-base-200 py-20">
@@ -89,12 +103,13 @@ const AddLostFoundItem = () => {
 
                         <div className="mb-4">
                             <label className="block font-semibold mb-2">Category</label>
-                            <select name="category" className="w-full border border-gray-300 p-2 rounded" required>
-                                <option value="">Select Category</option>
-                                <option value="Pets">Pets</option>
-                                <option value="Documents">Documents</option>
-                                <option value="Gadgets">Gadgets</option>
-                            </select>
+                            <input
+                                type="text"
+                                name="category"
+                                placeholder="e.g., pets, documents, gadgets"
+                                className="w-full border border-gray-300 p-2 rounded"
+                                required
+                            />
                         </div>
 
                         <div className="mb-4">
