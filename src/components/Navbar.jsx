@@ -1,26 +1,27 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContex } from '../Providers/AuthProvider';
 
 const Navbar = () => {
-    const {user, signoutUser} = useContext(AuthContex)
+    const { user, signoutUser } = useContext(AuthContex)
+    const [dropdown, setDropdown] = useState(false)
     const links = <>
         <li> <NavLink to={'/'}> Home </NavLink> </li>
         <li> <NavLink to={'/lost-found-items'}> Lost & Found Items </NavLink> </li>
-        <li>
-            <details>
-                <summary>Profile Picture</summary>
-                <ul className="p-2">
-                    <li> <NavLink to={'/add-lost-found-item'}> Add Lost & Found Item </NavLink> </li>
-                    <li> <NavLink to={'/all-recovered-items'}> All Recovered Items </NavLink> </li>
-                    <li> <NavLink to={'/manage-my-items'}> Manage My Items </NavLink> </li>
-                </ul>
-            </details>
-        </li>
         <li><a>Item 3</a></li>
     </>
+
+    const dropdownLinks = <>
+        <li> <NavLink to={'/add-lost-found-item'}> Add Lost & Found Item </NavLink> </li>
+        <li> <NavLink to={'/all-recovered-items'}> All Recovered Items </NavLink> </li>
+        <li> <NavLink to={'/manage-my-items'}> Manage My Items </NavLink> </li>
+    </>
+
+    const handleDropDown = () => {
+        return setDropdown(!dropdown)
+    }
     return (
-        <div className="navbar bg-base-100 h-10 md:h-14">
+        <div className="navbar bg-base-100 h-10 md:h-14 w-[90%] mx-auto">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -54,18 +55,18 @@ const Navbar = () => {
                     }
                 </ul>
             </div>
-            <div className="navbar-end w-full lg:w-[50%] items-center justify-end justify-items-end  justify-self-end jus space-x-5">
+            <div className="navbar-end w-full lg:w-[50%] items-center justify-end justify-items-end  justify-self-end jus space-x-5 relative">
                 <div>
                     {
                         user ?
                             <div className='flex items-center gap-3 md:gap-6'>
-                                <div className="relative group w-10 md:w-14">
+                                <div onClick={handleDropDown} className="relative group w-10 md:w-14 h-10 md:h-14">
                                     <img
                                         className="w-10 border-2 border-[#1d22b8] dark:border-[#f0f647] md:w-14 rounded-full group-hover:hidden"
                                         src={`${user.photoURL}`}
                                         alt=""
                                     />
-                                    <h2 className="absolute inset-0 hidden group-hover:flex justify-center items-center text-black dark:text-white">
+                                    <h2 className="absolute inset-0 hidden group-hover:flex justify-center items-center text-black cursor-pointer dark:text-white">
                                         {user.displayName}
                                     </h2>
                                 </div>
@@ -76,6 +77,11 @@ const Navbar = () => {
                                 <Link className='font-medium' to={'/register'}>Register</Link>
                             </div>
                     }
+                </div>
+                <div onClick={() => setDropdown(!dropdown)} className={` bg-[#1d22b8] dark:bg-[#f0f647] absolute top-14 right-10 z-10 p-6 rounded-xl transform transition-all duration-1000   ${dropdown ? "scale-100 opacity-100" : "scale-0 opacity-0 pointer-events-none -z-10"}`}>
+                    <ul className='cursor-pointer text-white dark:text-black grid gap-5'>
+                        {dropdownLinks}
+                    </ul>
                 </div>
             </div>
         </div>
