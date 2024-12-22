@@ -7,7 +7,7 @@ const Navbar = () => {
     const [dropdown, setDropdown] = useState(false)
     const links = <>
         <li> <NavLink to={'/'}> Home </NavLink> </li>
-        <li> <NavLink to={'/lost-found-items'}> Lost & Found Items </NavLink> </li>
+        <li> <NavLink to={'/allItems'}> Lost & Found Items </NavLink> </li>
         <li><a>Item 3</a></li>
     </>
 

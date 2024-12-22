@@ -55,8 +55,7 @@ const AddLostFoundItem = () => {
                 <div className="text-center ">
                     <h1 className="text-5xl font-bold">Add Found & Lost Item</h1>
                     <p className="py-6">
-                        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-                        quasi. In deleniti eaque aut repudiandae et a id nisi.
+                        Easily report items you've lost or found by filling out the form. Provide details like the item’s title, description, category, and location, and upload an image or provide a URL. Whether you're searching for a lost item or helping someone recover theirs.
                     </p>
                 </div>
                 <div className="card bg-base-100 w-full  shrink-0 shadow-2xl">
@@ -132,15 +131,6 @@ const AddLostFoundItem = () => {
                                 }}
                                 dateFormat="yyyy-MM-dd"
                             />
-                            {/* Display the selected date in the input field */}
-                            {/* <input
-                                type="text"
-                                name="dateLost"
-                                value={selectedDate ? selectedDate.toISOString().split("T")[0] : ""}
-                                placeholder="Select date"
-                                className="w-full border border-gray-300 p-2 rounded mt-2"
-                                readOnly
-                            /> */}
                         </div>
                         <div className="mb-4">
                             <label className="block font-semibold mb-2">Contact Information</label>
@@ -164,7 +154,7 @@ const AddLostFoundItem = () => {
                             </div>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Login</button>
+                            <button className="btn btn-primary">Add Post</button>
                         </div>
                     </form>
                 </div>

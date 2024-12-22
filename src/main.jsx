@@ -25,8 +25,9 @@ const router = createBrowserRouter([
         element: <Home></Home>
       },
       {
-        path: "lost-found-items",
-        element: <LostFoundItems></LostFoundItems>
+        path: "allItems",
+        element: <LostFoundItems></LostFoundItems>,
+        loader: () => fetch('http://localhost:5000/items')
       },
       {
         path: "add-lost-found-item",
