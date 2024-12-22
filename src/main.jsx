@@ -7,6 +7,13 @@ import {
 } from "react-router-dom";
 import MainLayout from './layout/MainLayout';
 import Home from './pages/home/Home';
+import LostFoundItems from './pages/LostFoundItems/LostFoundItems';
+import AddLostFoundItem from './pages/AddLostFoundItem/AddLostFoundItem';
+import AllRecoveredItems from './pages/AllRecoveredItems.jsx/AllRecoveredItems';
+import ManageMyItems from './pages/ManageMyItems/ManageMyItems';
+import AuthProvider from './Providers/AuthProvider';
+import Login from './pages/LogIn/LogIn';
+import Register from './pages/Register/Register';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +23,30 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>
+      },
+      {
+        path: "lost-found-items",
+        element: <LostFoundItems></LostFoundItems>
+      },
+      {
+        path: "add-lost-found-item",
+        element: <AddLostFoundItem></AddLostFoundItem>
+      },
+      {
+        path: "all-recovered-items",
+        element: <AllRecoveredItems></AllRecoveredItems>
+      },
+      {
+        path: "manage-my-items",
+        element: <ManageMyItems></ManageMyItems>
+      },
+      {
+        path: "login",
+        element: <Login></Login>
+      },
+      {
+        path: "register",
+        element: <Register></Register>
       }
     ]
   },
@@ -23,6 +54,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </StrictMode>,
 )
