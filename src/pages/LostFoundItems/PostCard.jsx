@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const PostCard = ({ post }) => {
-    const { postType, thumbnail, title, description, category, location, dateLost, contactName, contactEmail } = post
+    const {_id, postType, thumbnail, title, description, category, location, dateLost, contactName, contactEmail } = post
+    
     return (
         <div className="card glass">
             <figure>
@@ -13,8 +15,8 @@ const PostCard = ({ post }) => {
                 <h2 className="card-title">{title}</h2>
                 <p className='text-left'>{description}</p>
                 <p className='text-left'> {dateLost} </p>
-                <div className="card-actions justify-end">
-                    <button className="btn btn-primary">View Details</button>
+                <div>
+                    <Link to={`/items/${_id}`} className="btn w-full btn-primary">View Details</Link>
                 </div>
             </div>
         </div>

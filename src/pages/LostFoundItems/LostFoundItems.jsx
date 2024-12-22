@@ -4,7 +4,6 @@ import PostCard from './PostCard';
 
 const LostFoundItems = () => {
     const allPost = useLoaderData()
-    console.log(allPost)
     return (
         <div className='text-center w-[90%] mx-auto my-20'>
             <h1 className='text-5xl font-bold text-center my-6'>Lost & Found Items</h1>

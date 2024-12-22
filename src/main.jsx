@@ -14,6 +14,7 @@ import ManageMyItems from './pages/ManageMyItems/ManageMyItems';
 import AuthProvider from './Providers/AuthProvider';
 import Login from './pages/LogIn/LogIn';
 import Register from './pages/Register/Register';
+import PostDetails from './pages/PostDetails/PostDetails';
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
       {
         path: "register",
         element: <Register></Register>
+      },
+      {
+        path: "items/:id",
+        element: <PostDetails></PostDetails>
       }
     ]
   },
