@@ -1,12 +1,12 @@
 import React from 'react';
 import Banner from './Banner';
-import LatestFindLost from './LatestFindLost';
+import LatestFindLostItems from './LatestFindLostItems';
 
 const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <LatestFindLost></LatestFindLost>
+            <LatestFindLostItems></LatestFindLostItems>
         </div>
     );
 };

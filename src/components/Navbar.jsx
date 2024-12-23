@@ -8,7 +8,6 @@ const Navbar = () => {
     const links = <>
         <li> <NavLink to={'/'}> Home </NavLink> </li>
         <li> <NavLink to={'/allItems'}> Lost & Found Items </NavLink> </li>
-        <li><a>Item 3</a></li>
     </>
 
     const dropdownLinks = <>
@@ -49,7 +48,7 @@ const Navbar = () => {
                 <a className="btn btn-ghost text-xl lg:text-2xl">WhereIsIt</a>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1 font-medium">
+                <ul className="menu menu-horizontal gap-4 px-1 font-medium">
                     {
                         links
                     }
