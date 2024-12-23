@@ -38,19 +38,18 @@ const AddLostFoundItem = () => {
             status
         };
 
-        // axios.post('http://localhost:5000/items', itemData)
-        //     .then(res => {
-        //         console.log(res.data)
-        //         if (res.data.acknowledged) {
-        //             Swal.fire({
-        //                 title: "Your item has been posted",
-        //                 icon: "success",
-        //                 draggable: true
-        //             })
-        //             form.reset()
-        //         }
-        //     })
-        console.log(itemData)
+        axios.post('http://localhost:5000/items', itemData)
+            .then(res => {
+                console.log(res.data)
+                if (res.data.acknowledged) {
+                    Swal.fire({
+                        title: "Your item has been posted",
+                        icon: "success",
+                        draggable: true
+                    })
+                    form.reset()
+                }
+            })
     }
     return (
         <div className="hero bg-base-200 py-20">

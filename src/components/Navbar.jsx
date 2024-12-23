@@ -12,9 +12,9 @@ const Navbar = () => {
     </>
 
     const dropdownLinks = <>
-        <li> <NavLink to={'/add-lost-found-item'}> Add Lost & Found Item </NavLink> </li>
-        <li> <NavLink to={'/all-recovered-items'}> All Recovered Items </NavLink> </li>
-        <li> <NavLink to={'/manage-my-items'}> Manage My Items </NavLink> </li>
+        <li> <NavLink to={'/addItems'}> Add Lost & Found Item </NavLink> </li>
+        <li> <NavLink to={'/allRecovered'}> All Recovered Items </NavLink> </li>
+        <li> <NavLink to={'/myItems'}> Manage My Items </NavLink> </li>
     </>
 
     const handleDropDown = () => {
@@ -78,7 +78,7 @@ const Navbar = () => {
                             </div>
                     }
                 </div>
-                <div onClick={() => setDropdown(!dropdown)} className={` bg-[#1d22b8] dark:bg-[#f0f647] absolute top-14 right-10 z-10 p-6 rounded-xl transform transition-all duration-1000   ${dropdown ? "scale-100 opacity-100" : "scale-0 opacity-0 pointer-events-none -z-10"}`}>
+                <div onClick={() => setDropdown(!dropdown)} className={` bg-[#1d22b8] dark:bg-[#f0f647] absolute top-14 right-10 z-10 p-6 rounded-xl transform transition-all duration-600   ${dropdown ? "scale-100 opacity-100" : "scale-0 opacity-0 pointer-events-none -z-10"}`}>
                     <ul className='cursor-pointer text-white dark:text-black grid gap-5'>
                         {dropdownLinks}
                     </ul>

@@ -15,6 +15,7 @@ import AuthProvider from './Providers/AuthProvider';
 import Login from './pages/LogIn/LogIn';
 import Register from './pages/Register/Register';
 import PostDetails from './pages/PostDetails/PostDetails';
+import UpdateItems from './pages/UpdateItems/UpdateItems';
 
 const router = createBrowserRouter([
   {
@@ -31,15 +32,15 @@ const router = createBrowserRouter([
         loader: () => fetch('http://localhost:5000/items')
       },
       {
-        path: "add-lost-found-item",
+        path: "addItems",
         element: <AddLostFoundItem></AddLostFoundItem>
       },
       {
-        path: "all-recovered-items",
+        path: "allRecovered",
         element: <AllRecoveredItems></AllRecoveredItems>
       },
       {
-        path: "manage-my-items",
+        path: "myItems",
         element: <ManageMyItems></ManageMyItems>
       },
       {
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
       {
         path: "items/:id",
         element: <PostDetails></PostDetails>
+      },
+      {
+        path: "updateItems/:id",
+        element: <UpdateItems></UpdateItems>
       }
     ]
   },

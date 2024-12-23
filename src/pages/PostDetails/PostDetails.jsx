@@ -54,8 +54,6 @@ const PostDetails = () => {
             })
         }
 
-        // Add logic to save the data (e.g., via Axios or Firebase)
-
         closeModal(); // Close the modal after submission
 
     };
