@@ -16,6 +16,7 @@ import Login from './pages/LogIn/LogIn';
 import Register from './pages/Register/Register';
 import PostDetails from './pages/PostDetails/PostDetails';
 import UpdateItems from './pages/UpdateItems/UpdateItems';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -33,15 +34,21 @@ const router = createBrowserRouter([
       },
       {
         path: "addItems",
-        element: <AddLostFoundItem></AddLostFoundItem>
+        element: <PrivateRoute>
+          <AddLostFoundItem></AddLostFoundItem>
+        </PrivateRoute>
       },
       {
         path: "allRecovered",
-        element: <AllRecoveredItems></AllRecoveredItems>
+        element: <PrivateRoute>
+          <AllRecoveredItems></AllRecoveredItems>
+        </PrivateRoute>
       },
       {
         path: "myItems",
-        element: <ManageMyItems></ManageMyItems>
+        element: <PrivateRoute>
+          <ManageMyItems></ManageMyItems>
+        </PrivateRoute>
       },
       {
         path: "login",
@@ -53,11 +60,15 @@ const router = createBrowserRouter([
       },
       {
         path: "items/:id",
-        element: <PostDetails></PostDetails>
+        element: <PrivateRoute>
+          <PostDetails></PostDetails>
+        </PrivateRoute>
       },
       {
         path: "updateItems/:id",
-        element: <UpdateItems></UpdateItems>
+        element: <PrivateRoute>
+          <UpdateItems></UpdateItems>
+        </PrivateRoute>
       }
     ]
   },
