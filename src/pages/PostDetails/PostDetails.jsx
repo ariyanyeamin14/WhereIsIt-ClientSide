@@ -24,7 +24,8 @@ const PostDetails = () => {
     const handleSubmit = () => {
         const recoveryDetails = {
             recoveryLocation: recoveredLocation,
-            recoveryDate: recoveredDate,
+            recoveryDate: recoveredDate? recoveredDate.toISOString().split("T")[0] : "",
+            // const dateLost = selectedDate ? selectedDate.toISOString().split("T")[0] : "";
             recoveredBy: {
                 name: user.displayName,
                 email: user.email,
@@ -46,7 +47,7 @@ const PostDetails = () => {
                     console.log(res.data)
                 })
         }
-        if(status){
+        if (status) {
             Swal.fire({
                 title: "Already recovered this item",
                 icon: "error",
@@ -100,7 +101,7 @@ const PostDetails = () => {
                     <p> Date {isLost ? 'lost' : 'found'} : {dateLost} </p>
                     <p>Email: {contactEmail}</p>
                     <p>Name: {contactName}</p>
-                    <p>Status: {status? " Already Recovered": " Not Recovered"}</p>
+                    <p>Status: {status ? " Already Recovered" : " Not Recovered"}</p>
                     <div className="card-actions ">
                         <button onClick={openModal} className="btn w-full btn-primary">
                             {isLost ? "Found This!" : "This is Mine!"}
@@ -147,6 +148,7 @@ const PostDetails = () => {
                         onChange={(date) => setRecoveredDate(date)}
                         className="w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                         placeholderText="Select a date"
+                        dateFormat="yyyy-MM-dd"
                     />
                 </div>
 
