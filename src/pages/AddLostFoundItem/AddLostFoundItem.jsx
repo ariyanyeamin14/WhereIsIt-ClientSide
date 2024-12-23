@@ -23,6 +23,7 @@ const AddLostFoundItem = () => {
         const dateLost = selectedDate ? selectedDate.toISOString().split("T")[0] : ""; // Get selected date in YYYY-MM-DD format
         const contactName = form.contactName.value;
         const contactEmail = form.contactEmail.value;
+        const status = "";
 
         const itemData = {
             postType,
@@ -34,20 +35,22 @@ const AddLostFoundItem = () => {
             dateLost,
             contactName,
             contactEmail,
+            status
         };
 
-        axios.post('http://localhost:5000/items', itemData)
-            .then(res => {
-                console.log(res.data)
-                if (res.data.acknowledged) {
-                    Swal.fire({
-                        title: "Your item has been posted",
-                        icon: "success",
-                        draggable: true
-                    })
-                    form.reset()
-                }
-            })
+        // axios.post('http://localhost:5000/items', itemData)
+        //     .then(res => {
+        //         console.log(res.data)
+        //         if (res.data.acknowledged) {
+        //             Swal.fire({
+        //                 title: "Your item has been posted",
+        //                 icon: "success",
+        //                 draggable: true
+        //             })
+        //             form.reset()
+        //         }
+        //     })
+        console.log(itemData)
     }
     return (
         <div className="hero bg-base-200 py-20">

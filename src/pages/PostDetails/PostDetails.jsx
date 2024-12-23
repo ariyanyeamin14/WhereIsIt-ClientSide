@@ -12,7 +12,7 @@ const PostDetails = () => {
     const _id = useParams()
     const [post, setpost] = useState({})
     const [isLost, setIsLost] = useState(false)
-    const { postType, thumbnail, title, description, category, location, dateLost, contactName, contactEmail } = post
+    const { postType, thumbnail, title, description, category, location, dateLost, contactName, contactEmail, status } = post
     const [isOpen, setIsOpen] = useState(false);
     const [recoveredDate, setRecoveredDate] = useState(null);
     const [recoveredLocation, setRecoveredLocation] = useState("");
@@ -33,16 +33,26 @@ const PostDetails = () => {
             postType, thumbnail, title, description, category, location, dateLost, contactName, contactEmail
         };
 
-        axios.post('http://localhost:5000/recoverd-items', recoveryDetails)
-            .then(res => {
-                if (res.data.acknowledged) {
-                    Swal.fire({
-                        title: "Your recovery details has been saved",
-                        icon: "success",
-                        draggable: true
-                    })
-                }
+        if (!status) {
+            axios.post(`http://localhost:5000/items/${_id.id}`, recoveryDetails)
+                .then(res => {
+                    if (res.data.modifiedCount > 0) {
+                        Swal.fire({
+                            title: "Your recovery details has been saved",
+                            icon: "success",
+                            draggable: true
+                        })
+                    }
+                    console.log(res.data)
+                })
+        }
+        if(status){
+            Swal.fire({
+                title: "Already recovered this item",
+                icon: "error",
+                draggable: true
             })
+        }
 
         // Add logic to save the data (e.g., via Axios or Firebase)
 
@@ -54,7 +64,7 @@ const PostDetails = () => {
             .then(res => {
                 setpost(res.data)
             })
-    }, [])
+    }, [handleSubmit])
 
     useEffect(() => {
         if (postType === 'Lost') {
@@ -92,6 +102,7 @@ const PostDetails = () => {
                     <p> Date {isLost ? 'lost' : 'found'} : {dateLost} </p>
                     <p>Email: {contactEmail}</p>
                     <p>Name: {contactName}</p>
+                    <p>Status: {status? " Already Recovered": " Not Recovered"}</p>
                     <div className="card-actions ">
                         <button onClick={openModal} className="btn w-full btn-primary">
                             {isLost ? "Found This!" : "This is Mine!"}
