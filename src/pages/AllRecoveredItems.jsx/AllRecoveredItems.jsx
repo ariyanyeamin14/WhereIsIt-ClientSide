@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContex } from '../../Providers/AuthProvider';
 import axios from 'axios';
 import { MdTableRows } from 'react-icons/md';
-import { TfiLayoutGrid3Alt } from 'react-icons/tfi';
 import { RiLayoutGrid2Line } from 'react-icons/ri';
 
 const AllRecoveredItems = () => {
@@ -11,7 +10,7 @@ const AllRecoveredItems = () => {
     const [tableFormet, setTableFormet] = useState(true)
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/recoveredItems?email=${user?.email}`)
+        axios.get(`http://localhost:5000/recoveredItems?email=${user?.email}`, { withCredentials: true})
             .then(res => setItems(res.data))
     }, [user])
 

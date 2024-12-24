@@ -6,6 +6,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useParams } from 'react-router-dom';
 import { AuthContex } from '../../Providers/AuthProvider';
 import Swal from 'sweetalert2';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 const PostDetails = () => {
 
@@ -17,6 +18,7 @@ const PostDetails = () => {
     const [recoveredDate, setRecoveredDate] = useState(null);
     const [recoveredLocation, setRecoveredLocation] = useState("");
     const { user } = useContext(AuthContex)
+    const AxiosSecure = useAxiosSecure()
 
     const openModal = () => setIsOpen(true);
     const closeModal = () => setIsOpen(false);
@@ -59,7 +61,7 @@ const PostDetails = () => {
 
     };
     useEffect(() => {
-        axios.get(`http://localhost:5000/items/${_id.id}`)
+        AxiosSecure.get(`/items/${_id.id}`, { withCredentials: true})
             .then(res => {
                 setpost(res.data)
             })

@@ -37,7 +37,7 @@ const ManageMyItems = () => {
     }
 
     useEffect(() => {
-        axios(`http://localhost:5000/myItems?email=${user?.email}`)
+        axios(`http://localhost:5000/myItems?email=${user?.email}`, { withCredentials: true})
             .then(res => {
                 setItems(res.data)
             })

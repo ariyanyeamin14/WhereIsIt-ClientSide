@@ -11,7 +11,7 @@ const UpdateItems = () => {
     const [selectedDate, setSelectedDate] = useState(null); // State for selected date
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/items/${id.id}`)
+        axios.get(`http://localhost:5000/items/${id.id}`, { withCredentials: true})
             .then(res => setItem(res.data))
     }, [id.id])
 
