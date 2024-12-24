@@ -7,7 +7,7 @@ const LatestFindLostItems = () => {
     const [items, setItems] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:5000/recentItems')
+        axios('http://localhost:5000/recentItems')
             .then(res => setItems(res.data))
     }, [])
     return (

@@ -18,11 +18,15 @@ import PostDetails from './pages/PostDetails/PostDetails';
 import UpdateItems from './pages/UpdateItems/UpdateItems';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
+import DynamicTitle from './components/DynamicTitle';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout></MainLayout>,
+    element: <>
+      <DynamicTitle />
+      <MainLayout />
+    </>,
     children: [
       {
         path: "/",

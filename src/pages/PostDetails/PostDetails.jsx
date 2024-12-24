@@ -10,7 +10,7 @@ import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 const PostDetails = () => {
 
-    const _id = useParams()
+    const id = useParams()
     const [post, setpost] = useState({})
     const [isLost, setIsLost] = useState(false)
     const { postType, thumbnail, title, description, category, location, dateLost, contactName, contactEmail, status } = post
@@ -37,7 +37,7 @@ const PostDetails = () => {
         };
 
         if (!status) {
-            axios.post(`http://localhost:5000/items/${_id.id}`, recoveryDetails)
+            axios.post(`http://localhost:5000/items/${id.id}`, recoveryDetails)
                 .then(res => {
                     if (res.data.modifiedCount > 0) {
                         Swal.fire({
@@ -61,7 +61,7 @@ const PostDetails = () => {
 
     };
     useEffect(() => {
-        AxiosSecure.get(`/items/${_id.id}`, { withCredentials: true})
+        AxiosSecure.get(`/items/${id.id}`, { withCredentials: true})
             .then(res => {
                 setpost(res.data)
             })
