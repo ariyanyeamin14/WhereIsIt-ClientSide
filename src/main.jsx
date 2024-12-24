@@ -17,6 +17,7 @@ import Register from './pages/Register/Register';
 import PostDetails from './pages/PostDetails/PostDetails';
 import UpdateItems from './pages/UpdateItems/UpdateItems';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
+import ErrorPage from './pages/ErrorPage/ErrorPage';
 
 const router = createBrowserRouter([
   {
@@ -72,6 +73,10 @@ const router = createBrowserRouter([
       }
     ]
   },
+  {
+    path: "*",
+    element: <ErrorPage></ErrorPage>
+  }
 ]);
 
 createRoot(document.getElementById('root')).render(
