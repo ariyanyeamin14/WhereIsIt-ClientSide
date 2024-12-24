@@ -14,6 +14,7 @@ const PostCard = ({ post }) => {
             <div className="card-body">
                 <h2 className="card-title">{title}</h2>
                 <p className='text-left'>{description}</p>
+                <p className='text-left'>{location}</p>
                 <p className='text-left'> {dateLost} </p>
                 <div>
                     <Link to={`/items/${_id}`} className="btn w-full btn-primary">View Details</Link>
