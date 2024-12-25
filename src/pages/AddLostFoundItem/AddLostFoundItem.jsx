@@ -156,7 +156,7 @@ const AddLostFoundItem = () => {
                             </div>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Add Post</button>
+                            <button className="btn bg-[#ec570d] text-white">Add Post</button>
                         </div>
                     </form>
                 </div>

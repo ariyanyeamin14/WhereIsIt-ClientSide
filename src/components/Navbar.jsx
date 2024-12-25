@@ -6,8 +6,12 @@ const Navbar = () => {
     const { user, signoutUser } = useContext(AuthContex)
     const [dropdown, setDropdown] = useState(false)
     const links = <>
-        <li> <NavLink to={'/'}> Home </NavLink> </li>
-        <li> <NavLink to={'/allItems'}> Lost & Found Items </NavLink> </li>
+        <li> <NavLink style={({ isActive }) => ({
+            backgroundColor: isActive ? "#ec570d" : "transparent", color: "white"
+        })} to={'/'}> Home </NavLink> </li>
+        <li> <NavLink style={({ isActive }) => ({
+            backgroundColor: isActive ? "#ec570d" : "transparent", color: "white"
+        })} to={'/allItems'}> Lost & Found Items </NavLink> </li>
     </>
 
     const dropdownLinks = <>
@@ -45,7 +49,7 @@ const Navbar = () => {
                         }
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl lg:text-2xl">WhereIsIt</a>
+                <a className="btn btn-ghost text-xl text-[#ec570d] lg:text-2xl">WhereIsIt</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal gap-4 px-1 font-medium">
@@ -61,15 +65,15 @@ const Navbar = () => {
                             <div className='flex items-center gap-3 md:gap-6'>
                                 <div onClick={handleDropDown} className="relative group w-10 md:w-14 h-10 md:h-14">
                                     <img
-                                        className="w-10 border-2 border-[#1d22b8] dark:border-[#f0f647] md:w-14 rounded-full group-hover:hidden"
+                                        className="w-10 border-2 border-[#ec570d] [#f0f647] md:w-14 rounded-full group-hover:hidden"
                                         src={`${user.photoURL}`}
                                         alt=""
                                     />
-                                    <h2 className="absolute inset-0 hidden group-hover:flex justify-center items-center text-black cursor-pointer dark:text-white">
+                                    <h2 className="absolute inset-0 hidden group-hover:flex justify-center items-center text-white cursor-pointer dark:text-white">
                                         {user.displayName}
                                     </h2>
                                 </div>
-                                <button onClick={signoutUser} className='btn bg-[#1d22b8] dark:bg-[#f0f647] dark:text-black border-none outline-none text-white  btn-primary btn-sm md:btn-md'>Logout</button>
+                                <button onClick={signoutUser} className='btn bg-[#ec570d] border-none outline-none text-white   btn-sm md:btn-md'>Logout</button>
                             </div> :
                             <div className='flex gap-4 items-center'>
                                 <Link className='font-medium' to={'/login'}>Log in</Link>
@@ -77,7 +81,7 @@ const Navbar = () => {
                             </div>
                     }
                 </div>
-                <div onClick={() => setDropdown(!dropdown)} className={` bg-[#1d22b8] dark:bg-[#f0f647] absolute top-14 right-10 z-10 p-6 rounded-xl transform transition-all duration-600   ${dropdown ? "scale-100 opacity-100" : "scale-0 opacity-0 pointer-events-none -z-10"}`}>
+                <div onClick={() => setDropdown(!dropdown)} className={` bg-[#ec570d]  absolute top-14 right-10 z-10 p-6 rounded-xl transform transition-all duration-600   ${dropdown ? "scale-100 opacity-100" : "scale-0 opacity-0 pointer-events-none -z-10"}`}>
                     <ul className='cursor-pointer text-white dark:text-black grid gap-5'>
                         {dropdownLinks}
                     </ul>

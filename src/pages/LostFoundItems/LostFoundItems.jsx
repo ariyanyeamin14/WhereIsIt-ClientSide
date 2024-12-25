@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import PostCard from './PostCard';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const LostFoundItems = () => {
     const [items, setItems] = useState([]); // Original data from the server
@@ -26,6 +28,13 @@ const LostFoundItems = () => {
         setFilteredItems(filtered);
     }, [searchQuery, items]);
 
+        useEffect(() => {
+            AOS.init({
+                duration: 500,
+                offset: 50,    
+            });
+        }, []);
+
     return (
         <div className='text-center w-[90%] mx-auto my-20'>
             <h1 className='text-5xl font-bold text-center my-6'>Lost & Found Items</h1>
@@ -41,12 +50,13 @@ const LostFoundItems = () => {
                     className="w-full p-2 border border-gray-300 rounded mb-4"
                 />
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-20 my-10">
+            <div data-aos-delay="600" className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-20 my-10">
                 {filteredItems.length > 0 ? (
-                    filteredItems.map((item) => (
+                    filteredItems.map((item, index) => (
                         <PostCard
                             key={item._id}
                             post={item}
+                            aosDelay={index % 3 * 400} 
                         ></PostCard>
                     ))
                 ) : (

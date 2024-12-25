@@ -1,8 +1,9 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Swal from 'sweetalert2';
 import { FcGoogle } from 'react-icons/fc';
 import { AuthContex } from '../../Providers/AuthProvider';
+import Swal from 'sweetalert2';
+
 
 const Login = () => {
     const { signInUser, signInUserWithGoogle } = useContext(AuthContex)
@@ -44,7 +45,9 @@ const Login = () => {
                     title: 'Success!',
                     text: 'Login successfull',
                     icon: 'success',
-                    confirmButtonText: 'Done'
+                    confirmButtonText: 'Done',
+                    color: '#ec570d',
+                    background: '#ec570d'
                 })
             })
             .catch((error) => {
@@ -87,7 +90,7 @@ const Login = () => {
                             <input type="password" name='password' placeholder="password" className="input input-bordered border-gray-500 focus:border-white focus:outline-none bg-black" required />
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary ">Login</button>
+                            <button className="btn bg-[#ec570d] text-white">Login</button>
                         </div>
                     </form>
                     <p className='text-center text-gray-300'>Don't have any account? <Link to={'/register'} className='font-semibold ml-2'> Register</Link> </p>

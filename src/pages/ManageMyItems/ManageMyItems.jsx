@@ -4,6 +4,8 @@ import { AuthContex } from '../../Providers/AuthProvider';
 import { MdDeleteForever } from 'react-icons/md';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const ManageMyItems = () => {
     const { user } = useContext(AuthContex)
@@ -37,11 +39,18 @@ const ManageMyItems = () => {
     }
 
     useEffect(() => {
-        axios(`http://localhost:5000/myItems?email=${user?.email}`, { withCredentials: true})
+        axios(`http://localhost:5000/myItems?email=${user?.email}`, { withCredentials: true })
             .then(res => {
                 setItems(res.data)
             })
     }, [user?.email, handleDelete])
+
+    useEffect(() => {
+        AOS.init({
+            duration: 1000, // Animation duration in milliseconds
+            offset: 50,     // Offset from the viewport
+        });
+    }, []);
 
     return (
         <div className='w-[90%] mx-auto my-20 text-center'>
@@ -51,7 +60,7 @@ const ManageMyItems = () => {
             </p>
             <div>
                 <div className="overflow-x-auto my-10">
-                    <table className="table bg-base-100 text-md text-center">
+                    <table className="table bg-base-100 text-md text-center overflow-hidden">
                         {/* head */}
                         <thead>
                             <tr>
@@ -65,14 +74,15 @@ const ManageMyItems = () => {
                         <tbody>
                             {
                                 items.map((item, index) =>
-                                    <tr key={index} className="hover">
+                                    <tr data-aos="fade-left"
+                                data-aos-delay={index * 200} key={index} className="hover overflow-hidden">
                                         <th>{index + 1}</th>
                                         <td>{item.title}</td>
                                         <td>{item.location}</td>
                                         <td>{item.dateLost}</td>
                                         <td className='flex justify-evenly items-center'>
-                                            <MdDeleteForever onClick={() => handleDelete(item._id)} className='cursor-pointer' color='blue' size={40} />
-                                            <Link to={`/updateItems/${item._id}`} className='btn btn-primary btn-sm'>Update</Link>
+                                            <MdDeleteForever onClick={() => handleDelete(item._id)} className='cursor-pointer text-[#ec570d]' size={40} />
+                                            <Link to={`/updateItems/${item._id}`} className='btn bg-[#ec570d] text-white btn-sm'>Update</Link>
                                         </td>
                                     </tr>
                                 )
@@ -82,7 +92,7 @@ const ManageMyItems = () => {
                 </div>
                 <div>
                     {
-                        items.length < 1 ? <h1 className='text-3xl text-red-900 font-bold'>You haven't added any item</h1> : <h1></h1>
+                        items.length < 1 ? <h1 className='text-5xl text-white font-bold'>You haven't added any item</h1> : <h1></h1>
                     }
                 </div>
             </div>

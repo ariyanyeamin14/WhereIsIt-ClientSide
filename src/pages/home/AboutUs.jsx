@@ -16,12 +16,12 @@ const AboutUs = () => {
                         animate={{ y: [50, 100, 50] }}
                         transition={{ duration: 10, repeat: Infinity }}
                         src={slider1}
-                        className="max-w-lg rounded-t-3xl rounded-br-3xl border-l-[6px] border-b-[6px] shadow-2xl " />
+                        className="max-w-lg rounded-t-3xl rounded-br-3xl border-[#ec570d] border-l-[8px] border-b-[8px] shadow-2xl " />
                     <motion.img
                         animate={{ x: [100, 50, 100] }}
                         transition={{ duration: 10, repeat: Infinity }}
                         src={slider2}
-                        className="max-w-lg rounded-t-3xl rounded-br-3xl border-l-[6px] border-b-[6px] shadow-2xl " />
+                        className="max-w-lg rounded-t-3xl rounded-br-3xl border-[#ec570d] border-l-[8px] border-b-[8px] shadow-2xl " />
                 </div>
             </div>
             <div>
@@ -29,7 +29,7 @@ const AboutUs = () => {
                 </h2>
                 <HowItWork></HowItWork>
                 <div className='mt-10'>
-                    <Link to={'/addItems'} className=' w-full btn btn-primary  rounded-full  mt-10 cursor-pointer'>Create Post</Link>
+                    <Link to={'/addItems'} className=' w-full btn bg-[#ec570d] text-white  rounded-full  mt-10 cursor-pointer'>Create Post</Link>
                 </div>
             </div>
         </div>

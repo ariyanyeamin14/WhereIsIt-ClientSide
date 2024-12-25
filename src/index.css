@@ -11,9 +11,17 @@ body{
 }
 
 .fashion-slider .swiper-pagination-bullet-active {
-    background-color: #ff6b6b; /* Highlight active bullet */
+    background-color: #ec570d; /* Highlight active bullet */
 }
 
 #gradient-bg{
     background: linear-gradient(to right, #0200479c, #08003cb4);
-  }
+}
+
+#btn-bg{
+    background: linearlinear-gradient(to right, #cb44e1, #6b0dec);
+}
+.swiper-button-prev{
+    color: #ec570d;
+    background-color: #ec570d;
+}

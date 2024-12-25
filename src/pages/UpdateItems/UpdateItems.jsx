@@ -168,7 +168,7 @@ const UpdateItems = () => {
                             </div>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Update Post</button>
+                            <button className="btn bg-[#ec570d] text-white">Update Post</button>
                         </div>
                     </form>
                 </div>

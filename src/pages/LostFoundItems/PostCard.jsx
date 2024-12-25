@@ -1,23 +1,34 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const PostCard = ({ post }) => {
-    const {_id, postType, thumbnail, title, description, category, location, dateLost, contactName, contactEmail } = post
-    
+const PostCard = ({ post, aosDelay }) => {
+    const { _id, postType, thumbnail, title, description, category, location, dateLost, contactName, contactEmail } = post;
+
     return (
-        <div className="card glass">
+        <div
+            data-aos="zoom-in-up"
+            data-aos-delay={aosDelay}
+            className="card glass transition-transform hover:scale-105 hover:shadow-xl hover:bg-[#ec570d] duration-1000"
+        >
             <figure>
-                <img className='h-[250px] w-full lg:h-[280px] xl:h-[350px]'
+                <img
+                    className="h-[250px] w-full lg:h-[280px] xl:h-[350px] object-cover transition-transform  duration-300 hover:scale-110"
                     src={thumbnail}
-                    alt="thumbnail" />
+                    alt="thumbnail"
+                />
             </figure>
             <div className="card-body">
-                <h2 className="card-title">{title}</h2>
-                <p className='text-left'>{description}</p>
-                <p className='text-left'>{location}</p>
-                <p className='text-left'> {dateLost} </p>
+                <h2 className="card-title text-white">{title}</h2>
+                <p className="text-left text-white">{description}</p>
+                <p className="text-left text-white">{location}</p>
+                <p className="text-left text-white">{dateLost}</p>
                 <div>
-                    <Link to={`/items/${_id}`} className="btn w-full btn-primary">View Details</Link>
+                    <Link
+                        to={`/items/${_id}`}
+                        className="btn w-full  text-white bg-[#ec570d] transition-colors duration-300"
+                    >
+                        View Details
+                    </Link>
                 </div>
             </div>
         </div>

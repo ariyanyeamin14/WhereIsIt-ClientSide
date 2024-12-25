@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Lottie from "lottie-react";
-import QnaAnimation from "../../assets/QNA_Animation.json"
-import QnaAnimation2 from "../../assets/QNA_Animation2.json"
-import QnaAnimation3 from "../../assets/QNA_Animation3.json"
+import QnaAnimation1 from "../../assets/QNA_Animation1.json"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const FAQ = () => {
     const [activeIndex, setActiveIndex] = useState(null);
@@ -41,25 +41,28 @@ const FAQ = () => {
             answer:
                 "When connecting with someone about an item, verify ownership by sharing specific details like unique marks, serial numbers, or other distinguishing features before arranging to meet.",
         },
-        {
-            question: "What should I do after recovering my item?",
-            answer:
-                "Once you've recovered your item, mark the corresponding post as resolved to keep the platform updated and avoid confusion for others.",
-        },
     ];
+    useEffect(() => {
+        AOS.init({
+            duration: 1000, // Animation duration in milliseconds
+            offset: 50,     // Offset from the viewport
+        });
+    }, []);
+
     return (
         <div className="w-[90%] mx-auto py-32">
             <h2 className="text-5xl font-bold text-center mb-10">Frequently Asked Questions</h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 justify-between items-center ">
-                <div className="flex-1">
-                    <div className="w-[90%] md:w-[70%] mx-auto">
-                        <Lottie animationData={QnaAnimation3} loop={true} />
+                <div>
+                    <div className="w-[90%] md:w-[90%] mx-auto">
+                        <Lottie animationData={QnaAnimation1} loop={true} />
                     </div>
                 </div>
-                <div className="container mx-auto p-6 flex-1">
+                <div className="container mx-auto p-6">
                     <div className="space-y-4">
                         {faqs.map((faq, index) => (
-                            <div key={index} className="border rounded-lg p-4">
+                            <div data-aos="fade-left"
+                            data-aos-delay={index * 200}   key={index} className="border rounded-lg p-4">
                                 <div
                                     className="flex justify-between items-center cursor-pointer"
                                     onClick={() => toggleFAQ(index)}
@@ -77,7 +80,7 @@ const FAQ = () => {
                                 >
                                     {activeIndex === index && (
                                         <motion.p
-                                            className="mt-2 text-gray-300"
+                                            className="mt-2 text-gray-300 "
                                             initial={{ opacity: 0 }}
                                             animate={{ opacity: 1 }}
                                             exit={{ opacity: 0 }}

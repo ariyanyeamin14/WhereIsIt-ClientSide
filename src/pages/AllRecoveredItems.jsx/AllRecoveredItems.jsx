@@ -3,6 +3,8 @@ import { AuthContex } from '../../Providers/AuthProvider';
 import axios from 'axios';
 import { MdTableRows } from 'react-icons/md';
 import { RiLayoutGrid2Line } from 'react-icons/ri';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const AllRecoveredItems = () => {
     const { user } = useContext(AuthContex)
@@ -10,9 +12,16 @@ const AllRecoveredItems = () => {
     const [tableFormet, setTableFormet] = useState(true)
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/recoveredItems?email=${user?.email}`, { withCredentials: true})
+        axios.get(`http://localhost:5000/recoveredItems?email=${user?.email}`, { withCredentials: true })
             .then(res => setItems(res.data))
     }, [user])
+
+    useEffect(() => {
+        AOS.init({
+            duration: 1000, // Animation duration in milliseconds
+            offset: 50,     // Offset from the viewport
+        });
+    }, []);
 
     return (
         <div className='w-[90%] mx-auto my-20 text-center'>
@@ -22,16 +31,16 @@ const AllRecoveredItems = () => {
             </p>
             <div>
                 <div className='flex items-center justify-end gap-5'>
-                    <RiLayoutGrid2Line onClick={() => setTableFormet(false)} size={50} className={ tableFormet? `p-2 rounded-full border border-gray-700 cursor-pointer`:'cursor-pointer text-white bg-gray-700 p-2 rounded-full'} />
-                    <MdTableRows onClick={() => setTableFormet(true)} size={50} className={ tableFormet? `cursor-pointer text-white bg-gray-700 p-2 rounded-full `:'p-2 rounded-full border border-gray-700 cursor-pointer'} />
+                    <RiLayoutGrid2Line onClick={() => setTableFormet(false)} size={50} className={tableFormet ? `p-2 rounded-full border border-gray-700 cursor-pointer` : 'cursor-pointer text-white bg-[#ec570d] p-2 rounded-full'} />
+                    <MdTableRows onClick={() => setTableFormet(true)} size={50} className={tableFormet ? `cursor-pointer text-white bg-[#ec570d] p-2 rounded-full ` : 'p-2 rounded-full border border-gray-700 cursor-pointer'} />
                 </div>
                 <div>
                     {
                         tableFormet ?
                             <div className="overflow-x-auto my-10">
-                                <table className="table bg-base-100 text-md text-center">
+                                <table className="table bg-base-100 text-base text-center overflow-hidden">
                                     {/* head */}
-                                    <thead>
+                                    <thead className='text-white text-lg'>
                                         <tr>
                                             <th></th>
                                             <th>Title</th>
@@ -43,7 +52,8 @@ const AllRecoveredItems = () => {
                                     <tbody>
                                         {
                                             items.map((item, index) =>
-                                                <tr key={index} className="hover">
+                                                <tr data-aos="fade-left"
+                                                    data-aos-delay={index * 200} key={index} className="hover">
                                                     <th>{index + 1}</th>
                                                     <td>{item.title}</td>
                                                     <td>{item.recoveredBy.name}</td>
@@ -58,8 +68,9 @@ const AllRecoveredItems = () => {
                             :
                             <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-20 my-10'>
                                 {
-                                    items.map(item =>
-                                        <div key={item._id} className="card glass">
+                                    items.map((item, index) =>
+                                        <div data-aos="zoom-in-up"
+                                            data-aos-delay={index % 3 * 400} key={item._id} className="card glass">
                                             <figure>
                                                 <img className='h-[250px] w-full lg:h-[280px] xl:h-[350px]'
                                                     src={item.thumbnail}
@@ -81,7 +92,7 @@ const AllRecoveredItems = () => {
                 </div>
                 <div>
                     {
-                        items.length < 1 ? <h1 className='text-3xl text-red-900 font-bold'>You haven't added any item</h1> : <h1></h1>
+                        items.length < 1 ? <h1 className='text-5xl text-white font-bold'>You haven't added any item</h1> : <h1></h1>
                     }
                 </div>
             </div>
