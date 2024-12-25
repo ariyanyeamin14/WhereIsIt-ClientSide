@@ -2,7 +2,7 @@ import React from 'react';
 import Banner from './Banner';
 import LatestFindLostItems from './LatestFindLostItems';
 import AboutUs from './AboutUs';
-import HowItWork from './HowItWorks';
+import FAQ from './FAQ';
 
 const Home = () => {
     return (
@@ -10,6 +10,7 @@ const Home = () => {
             <Banner></Banner>
             <AboutUs></AboutUs>
             <LatestFindLostItems></LatestFindLostItems>
+            <FAQ></FAQ>
         </div>
     );
 };
