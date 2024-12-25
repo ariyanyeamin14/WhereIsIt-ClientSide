@@ -25,7 +25,7 @@ const Slider = () => {
         <div className="relative w-full">
             <Swiper
                 modules={[Navigation, Pagination, Autoplay]}
-                autoplay={{ delay: 3000 }}
+                autoplay={{ delay: 4000 }}
                 loop={true}
                 navigation
                 pagination={{ clickable: true }}
