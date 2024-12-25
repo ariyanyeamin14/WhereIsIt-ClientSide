@@ -94,39 +94,39 @@ const Register = () => {
             });
     }
     return (
-        <div className="min-h-screen bg-gray-100 flex justify-center items-center py-20  dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-            <div className="w-[90%] mx-auto md:w-full max-w-3xl px-5 py-10 md:p-12 bg-white rounded-lg shadow-md  dark:bg-[#0C1935] text-gray-900 dark:text-gray-100">
+        <div className="min-h-screen flex justify-center items-center py-20  bg-[#191e24] text-gray-900 dark:text-gray-100">
+            <div className="w-[90%] mx-auto md:w-full max-w-3xl px-5 py-10 md:p-12 bg-[#1d232a] rounded-lg shadow-md text-gray-100">
                 <div className='text-center'>
                     <div className="btn btn-ghost nav-logo text-xl lg:text-2xl font-extrabold  mb-10"> <p>WhereIsIt</p> </div>
                     <h2 className='text-4xl font-semibold'>REGISTER</h2>
                 </div>
-                <div className='bg-gray-200  py-1 md:py-3 mx-1 md:mx-8 my-10 text-center rounded-xl cursor-pointer text-gray-600' onClick={handleGoogleSignin}> <FcGoogle size={40} className='inline-block' /> Signin With Google</div>
+                <div className='text-gray-100  py-1 md:py-3 mx-1 md:mx-8 my-10 text-center rounded-xl cursor-pointer border border-gray-500 bg-black' onClick={handleGoogleSignin}> <FcGoogle size={40} className='inline-block' /> Signin With Google</div>
                 <div className="divider">OR</div>
                 <div>
                     <form className="card-body px-1 md:px-6" onSubmit={handleSubmit}>
                         <div className="form-control">
                             <label className="label ">
-                                <span className="label-text dark:text-gray-100">Name</span>
+                                <span className="label-text text-gray-100">Name</span>
                             </label>
-                            <input type="text" name='name' placeholder="name" className="input bg-gray-50 input-bordered dark:text-gray-900" required />
+                            <input type="text" name='name' placeholder="name" className="input border border-gray-500 focus:border-white focus:outline-none bg-black" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text dark:text-gray-100">Photo URL</span>
+                                <span className="label-text text-gray-100">Photo URL</span>
                             </label>
-                            <input type="text" name='photo' placeholder="photo" className="bg-gray-50 input input-bordered dark:text-gray-900" required />
+                            <input type="text" name='photo' placeholder="photo" className="input input-bordered border border-gray-500 focus:border-white focus:outline-none bg-black" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text dark:text-gray-100">Email</span>
                             </label>
-                            <input type="email" name='email' placeholder="email" className="bg-gray-50 input input-bordered dark:text-gray-900" required />
+                            <input type="email" name='email' placeholder="email" className=" input input-bordered border border-gray-500 focus:border-white focus:outline-none bg-black" required />
                         </div>
                         <div className="form-control relative">
                             <label className="label">
                                 <span className="label-text dark:text-gray-100">Password</span>
                             </label>
-                            <input type={showPassword ? 'text' : 'password'} name='password' placeholder="password" className="bg-gray-50 input input-bordered dark:text-gray-900" required />
+                            <input type={showPassword ? 'text' : 'password'} name='password' placeholder="password" className=" input iborder border-gray-500 focus:border-white focus:outline-none bg-black" required />
                             <button
                                 type="button"
                                 onClick={togglePasswordVisibility}
@@ -138,7 +138,7 @@ const Register = () => {
                             <button className="btn  bg-[#1d22b8] dark:bg-[#f0f647] dark:text-black border-none text-white ">Register</button>
                         </div>
                     </form>
-                    <p className='text-center text-gray-600 dark:text-gray-400'>Already have an account? <Link to={'/login'} className='font-semibold ml-2 dark:text-gray-400'> Login</Link> </p>
+                    <p className='text-center text-gray-300'>Already have an account? <Link to={'/login'} className='font-semibold ml-2 dark:text-gray-400'> Login</Link> </p>
                 </div>
             </div>
         </div>

@@ -1,9 +1,10 @@
 import React from 'react';
+import Slider from '../../components/Slider';
 
 const Banner = () => {
     return (
         <div>
-            <h1 className='text-4xl text-center'>This is banner</h1>
+            <Slider></Slider>
         </div>
     );
 };

@@ -7,4 +7,13 @@
 body{
     font-family: "Poppins", serif;
     overflow-y: scroll;
+    color: white;
 }
+
+.fashion-slider .swiper-pagination-bullet-active {
+    background-color: #ff6b6b; /* Highlight active bullet */
+}
+
+#gradient-bg{
+    background: linear-gradient(to right, #0200479c, #08003cb4);
+  }
