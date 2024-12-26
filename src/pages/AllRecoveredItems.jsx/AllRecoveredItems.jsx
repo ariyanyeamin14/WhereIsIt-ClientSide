@@ -12,7 +12,7 @@ const AllRecoveredItems = () => {
     const [tableFormet, setTableFormet] = useState(true)
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/recoveredItems?email=${user?.email}`, { withCredentials: true })
+        axios.get(`https://where-is-it-server-side.vercel.app/recoveredItems?email=${user?.email}`, { withCredentials: true })
             .then(res => setItems(res.data))
     }, [user])
 
