@@ -41,10 +41,10 @@ const Slider = () => {
                             />
                             <div id='gradient-bg' className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white px-4 py-2 rounded">
                                 <div className='md:w-[80%]'>
-                                    <h1 className='font-semibold text-[48px] md:text-[60px] xl:text-[96px] leading-snug'>
+                                    <h1 className='font-semibold text-[40px] md:text-[60px] xl:text-[96px] leading-snug'>
                                          A Place to Find What’s Missing
                                     </h1>
-                                    <h3 className="text-3xl font-semibold">{slide.title}</h3>
+                                    <h3 className="text-3xl mt-10 font-semibold">{slide.title}</h3>
                                 </div>
                             </div>
                         </div>
