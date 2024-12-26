@@ -8,7 +8,7 @@ const PostCard = ({ post, aosDelay }) => {
         <div
             data-aos="zoom-in-up"
             data-aos-delay={aosDelay}
-            className="card glass transition-transform hover:scale-105 hover:shadow-xl hover:bg-[#ec570d] duration-1000"
+            className="card glass transition-transform hover:bg-[#ec570d] duration-300"
         >
             <figure>
                 <img

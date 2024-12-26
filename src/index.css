@@ -17,11 +17,3 @@ body{
 #gradient-bg{
     background: linear-gradient(to right, #0200479c, #08003cb4);
 }
-
-#btn-bg{
-    background: linearlinear-gradient(to right, #cb44e1, #6b0dec);
-}
-.swiper-button-prev{
-    color: #ec570d;
-    background-color: #ec570d;
-}

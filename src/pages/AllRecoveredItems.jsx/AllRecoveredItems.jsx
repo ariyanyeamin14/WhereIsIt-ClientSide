@@ -70,9 +70,9 @@ const AllRecoveredItems = () => {
                                 {
                                     items.map((item, index) =>
                                         <div data-aos="zoom-in-up"
-                                            data-aos-delay={index % 3 * 400} key={item._id} className="card glass">
+                                            data-aos-delay={index % 3 * 400} key={item._id} className="card glass transition-transform hover:bg-[#ec570d] duration-300">
                                             <figure>
-                                                <img className='h-[250px] w-full lg:h-[280px] xl:h-[350px]'
+                                                <img className='h-[250px] w-full lg:h-[280px] xl:h-[350px] transition-transform  duration-300 hover:scale-110'
                                                     src={item.thumbnail}
                                                     alt="thumbnail" />
                                             </figure>

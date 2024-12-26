@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContex } from '../Providers/AuthProvider';
+import { LuSquareMenu } from 'react-icons/lu';
 
 const Navbar = () => {
     const { user, signoutUser } = useContext(AuthContex)
     const [dropdown, setDropdown] = useState(false)
+    const [active, setActive] = useState(false)
     const links = <>
         <li> <NavLink style={({ isActive }) => ({
             backgroundColor: isActive ? "#ec570d" : "transparent", color: "white"
@@ -23,32 +25,14 @@ const Navbar = () => {
     const handleDropDown = () => {
         return setDropdown(!dropdown)
     }
+    const handleMobileMenu = () => {
+        (active)
+        return setActive(!active)
+
+    }
     return (
         <div className="navbar bg-base-100 h-10 md:h-14 w-[90%] mx-auto">
             <div className="navbar-start">
-                <div className="dropdown">
-                    <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-5 w-5"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M4 6h16M4 12h8m-8 6h16" />
-                        </svg>
-                    </div>
-                    <ul
-                        tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                        {
-                            links
-                        }
-                    </ul>
-                </div>
                 <a className="btn btn-ghost text-xl text-[#ec570d] lg:text-2xl">WhereIsIt</a>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -81,11 +65,17 @@ const Navbar = () => {
                             </div>
                     }
                 </div>
+                <div>
+                    <LuSquareMenu color='' className='text-[#ec570d] dark:text-[#f0f647] lg:hidden' onClick={() => handleMobileMenu()} size={30} />
+                </div>
                 <div onClick={() => setDropdown(!dropdown)} className={` bg-[#ec570d]  absolute top-14 right-10 z-10 p-6 rounded-xl transform transition-all duration-600   ${dropdown ? "scale-100 opacity-100" : "scale-0 opacity-0 pointer-events-none -z-10"}`}>
                     <ul className='cursor-pointer text-white dark:text-black grid gap-5'>
                         {dropdownLinks}
                     </ul>
                 </div>
+            </div>
+            <div onClick={() => setActive(!active)} className={` bg-[#ec570d]  text-white  absolute grid right-2 z-10  p-6 gap-5 rounded-xl duration-1000   ${active ? "top-14 " : "-top-80"}`}>
+                {links}
             </div>
         </div>
     );
