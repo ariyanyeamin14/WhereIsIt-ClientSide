@@ -26,7 +26,7 @@ const AllRecoveredItems = () => {
     }, []);
 
     return (
-        <div className='w-[90%] mx-auto my-20 text-center'>
+        <div className='w-[90%] mx-auto  my-20 md:my-32 text-center'>
             <h1 className="text-5xl font-bold text-center my-6">All Recovered Items</h1>
             <p className="w-[90%] lg:w-[80%] mx-auto">
                 Easily report items you've lost or found by filling out the form. Provide details like the item’s title, description, category, and location, and upload an image or provide a URL. Whether you're searching for a lost item or helping someone recover theirs.
@@ -72,7 +72,9 @@ const AllRecoveredItems = () => {
                                 {
                                     items.map((item, index) =>
                                         <div data-aos="zoom-in-up"
-                                            data-aos-delay={index % 3 * 400} key={item._id} className="card glass transition-transform hover:bg-[#ec570d] duration-300">
+                                            data-aos-delay={index % 3 * 400} key={item._id} 
+                                            id='card'
+                                            className="card glass transition-transform hover:bg-[#ec570d] duration-300">
                                             <figure>
                                                 <img className='h-[250px] w-full lg:h-[280px] xl:h-[350px] transition-transform  duration-300 hover:scale-110'
                                                     src={item.thumbnail}

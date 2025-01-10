@@ -13,7 +13,7 @@ import useAxiosSecure from '../../hooks/useAxiosSecure';
 const PostDetails = () => {
 
     const id = useParams()
-    const [post, setpost] = useState({})
+    const [post, setPost] = useState({})
     const [isLost, setIsLost] = useState(false)
     const { postType, thumbnail, title, description, category, location, dateLost, contactName, contactEmail, status } = post
     const [isOpen, setIsOpen] = useState(false);
@@ -65,7 +65,7 @@ const PostDetails = () => {
     useEffect(() => {
         axiosSecure(`https://where-is-it-server-side.vercel.app/items/${id.id}`, { withCredentials: true })
             .then(res => {
-                setpost(res.data)
+                setPost(res.data)
             })
     }, [handleSubmit])
 
@@ -81,6 +81,12 @@ const PostDetails = () => {
             offset: 50,     // Offset from the viewport
         });
     }, []);
+
+    if (!post._id) {
+        return <div className='flex justify-center items-center min-h-screen'>
+            <span className="loading w-[150px] text-center loading-spinner text-[#ec570d] "></span>
+        </div>
+    }
 
     return (
         <div className='bg-[#191e24] py-20'>

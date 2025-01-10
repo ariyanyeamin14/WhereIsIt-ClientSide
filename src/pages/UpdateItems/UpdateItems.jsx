@@ -59,7 +59,7 @@ const UpdateItems = () => {
     }
 
     return (
-        <div className="hero bg-base-200 py-20">
+        <div className="hero bg-base-200 py-28">
             <div className="hero-content flex-col">
                 <div className="text-center ">
                     <h1 className="text-5xl font-bold">Update Item</h1>

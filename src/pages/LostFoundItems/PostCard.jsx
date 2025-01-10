@@ -6,9 +6,10 @@ const PostCard = ({ post, aosDelay }) => {
 
     return (
         <div
+            id='card'
             data-aos="zoom-in-up"
             data-aos-delay={aosDelay}
-            className="card glass transition-transform hover:bg-[#ec570d] duration-300"
+            className="card glass"
         >
             <figure>
                 <img
@@ -25,7 +26,7 @@ const PostCard = ({ post, aosDelay }) => {
                 <div>
                     <Link
                         to={`/items/${_id}`}
-                        className="btn w-full  text-white bg-[#ec570d] transition-colors duration-300"
+                        className="btn w-full  text-white bg-[#ec570d]"
                     >
                         View Details
                     </Link>

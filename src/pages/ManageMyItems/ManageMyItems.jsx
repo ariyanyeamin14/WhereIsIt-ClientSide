@@ -55,7 +55,7 @@ const ManageMyItems = () => {
     }, []);
 
     return (
-        <div className='w-[90%] mx-auto my-20 text-center'>
+        <div className='w-[90%] mx-auto my-20 md:my-32 text-center'>
             <h1 className="text-5xl font-bold text-center my-6">Manage My Items</h1>
             <p className="w-[90%] lg:w-[80%] mx-auto">
                 Easily report items you've lost or found by filling out the form. Provide details like the item’s title, description, category, and location, and upload an image or provide a URL. Whether you're searching for a lost item or helping someone recover theirs.

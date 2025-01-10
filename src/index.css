@@ -17,3 +17,16 @@ body{
 #gradient-bg{
     background: linear-gradient(to right, #0200479c, #08003cb4);
 }
+#card{
+    transition: background-color 400ms ease-out, transform 400ms ease-out;
+}
+#card:hover{
+    background-color: #ec570d;
+    
+}
+#card:hover img{
+    transform: scale(1.15)
+}
+#card:hover .btn{
+    background-color: #14191e
+}
