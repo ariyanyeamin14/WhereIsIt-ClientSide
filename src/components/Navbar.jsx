@@ -40,7 +40,7 @@ const Navbar = () => {
         <div className='fixed top-0 w-full z-50 bg-[#15151569] backdrop-blur-md shadow-lg'>
             <div className="navbar h-10 md:h-14 w-[90%] mx-auto">
                 <div className="navbar-start">
-                    <a className="btn btn-ghost text-xl text-[#ec570d] lg:text-2xl">WhereIsIt</a>
+                    <a href='/' className="font-bold text-2xl text-[#ec570d] lg:text-2xl">WhereIsIt</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal gap-4 px-1 font-medium">

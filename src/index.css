@@ -31,7 +31,7 @@ body{
     background-color: #14191e
 }
 .background {
-    background: linear-gradient(to top, #ec570dc2 50%, transparent 50%);
+    background: linear-gradient(to top, #ec570d98 50%, transparent 50%);
     /* Replace #f0f4f8 with your desired background color */
     position: absolute;
     bottom: 0;
