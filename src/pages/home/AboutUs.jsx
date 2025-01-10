@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 const AboutUs = () => {
 
     return (
-        <div className='grid grid-cols-subgrid xl:grid-cols-2 gap-8 w-[90%] xl:w-[85%] mx-auto py-32 md:mb-32'>
+        <div className='grid grid-cols-subgrid xl:grid-cols-2 gap-8 w-[90%] xl:w-[85%] mx-auto py-20'>
             <div className='xl:relative hidden md:block'>
                 <div >
                     <motion.img

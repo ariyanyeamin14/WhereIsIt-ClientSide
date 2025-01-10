@@ -14,6 +14,12 @@ const Navbar = () => {
         <li> <NavLink style={({ isActive }) => ({
             backgroundColor: isActive ? "#ec570d" : "transparent", color: "white"
         })} to={'/allItems'}> Lost & Found Items </NavLink> </li>
+        <li> <NavLink style={({ isActive }) => ({
+            backgroundColor: isActive ? "#ec570d" : "transparent", color: "white"
+        })} to={'/item-category'}> Items Category </NavLink> </li>
+        <li> <NavLink style={({ isActive }) => ({
+            backgroundColor: isActive ? "#ec570d" : "transparent", color: "white"
+        })} to={'/about'}> About </NavLink> </li>
     </>
 
     const dropdownLinks = <>

@@ -29,7 +29,7 @@ const Slider = () => {
                 loop={true}
                 navigation
                 pagination={{ clickable: true }}
-                className="fashion-slider w-full h-[800px] mt-10 md:mt-14"
+                className="fashion-slider w-full h-[780px] mt-10 md:mt-14"
             >
                 {slides.map((slide) => (
                     <SwiperSlide key={slide.id}>

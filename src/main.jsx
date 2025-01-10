@@ -19,6 +19,8 @@ import UpdateItems from './pages/UpdateItems/UpdateItems';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
 import DynamicTitle from './components/DynamicTitle';
+import ItemCategoryPage from './pages/ItemCategoryPage/ItemCategoryPage';
+import AboutPage from './pages/AboutPage/AboutPage';
 
 const router = createBrowserRouter([
   {
@@ -73,6 +75,14 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
           <UpdateItems></UpdateItems>
         </PrivateRoute>
+      },
+      {
+        path: "item-category",
+        element: <ItemCategoryPage></ItemCategoryPage>
+      },
+      {
+        path: "about",
+        element: <AboutPage></AboutPage>
       }
     ]
   },

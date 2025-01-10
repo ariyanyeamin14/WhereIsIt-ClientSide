@@ -50,7 +50,7 @@ const FAQ = () => {
     }, []);
 
     return (
-        <div className="w-[90%] mx-auto py-32">
+        <div className="w-[90%] mx-auto py-20">
             <h2 className="text-3xl lg:text-5xl font-bold text-center mb-10">Frequently Asked Questions</h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 justify-between items-center ">
                 <div>
@@ -58,7 +58,7 @@ const FAQ = () => {
                         <Lottie animationData={QnaAnimation1} loop={true} />
                     </div>
                 </div>
-                <div className="container mx-auto p-6">
+                <div className="container mx-auto p-6 overflow-hidden">
                     <div className="space-y-4">
                         {faqs.map((faq, index) => (
                             <div data-aos="fade-left"

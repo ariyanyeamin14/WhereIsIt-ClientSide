@@ -47,7 +47,7 @@ const LostFoundItems = () => {
                     placeholder="Search by title or location..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full p-4 border text-lg border-gray-300 rounded-full mb-4 focus:border-[#ec570d] focus:outline-none"
+                    className="w-full p-3 border text-lg border-gray-300 rounded-full mb-4 focus:border-[#ec570d] focus:outline-none"
                 />
             </div>
             <div data-aos-delay="600" className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-20 my-10">

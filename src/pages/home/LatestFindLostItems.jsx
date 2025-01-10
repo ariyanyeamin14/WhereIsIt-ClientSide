@@ -22,7 +22,7 @@ const LatestFindLostItems = () => {
 
     return (
         <div>
-            <div className="text-center w-[90%] mx-auto my-20">
+            <div className="text-center w-[90%] mx-auto py-20">
                 <h1 className="text-3xl lg:text-5xl font-bold text-center my-6" >
                     Latest Lost & Found Items
                 </h1>
@@ -36,7 +36,7 @@ const LatestFindLostItems = () => {
                     item and how you can get in touch with its owner or find further details.
                 </p>
                 <div
-                    className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-20 my-10">
+                    className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-20 my-8">
                     {items.map((post, index) => (
                         <PostCard
                             post={post}
