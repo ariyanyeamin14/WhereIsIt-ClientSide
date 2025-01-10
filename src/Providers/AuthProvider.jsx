@@ -38,13 +38,13 @@ const AuthProvider = ({ children }) => {
 
             if (currentUser?.email) {
                 const user = { email: currentUser.email }
-                axios.post('https://where-is-it-server-side.vercel.app/jwt', user, { withCredentials: true })
+                axios.post('http://localhost:5000/jwt', user, { withCredentials: true })
                     .then(res => {
                         setLoading(false)
                     })
             }
             else {
-                axios.post('https://where-is-it-server-side.vercel.app/logout', {}, {
+                axios.post('http://localhost:5000/logout', {}, {
                     withCredentials: true
                 })
                     .then(res => {

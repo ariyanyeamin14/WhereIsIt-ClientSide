@@ -5,7 +5,7 @@
 Developing this website provides practical experience in building full-stack applications, user authentication, file uploads, database management, and API integration
 
 3. ClientSide Live URL: https://whereisit-cf11d.web.app
-   ServerSide URL: https://where-is-it-server-side.vercel.app
+   ServerSide URL: http://localhost:5000
 
 4. Technologies: 
     1. ReactJS

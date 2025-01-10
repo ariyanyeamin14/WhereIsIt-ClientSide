@@ -6,10 +6,12 @@ import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 const ManageMyItems = () => {
     const { user } = useContext(AuthContex)
     const [items, setItems] = useState([])
+    const axiosSecure = useAxiosSecure()
 
     const handleDelete = (id) => {
         Swal.fire({
@@ -22,7 +24,7 @@ const ManageMyItems = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`https://where-is-it-server-side.vercel.app/myItems/${id}`)
+                axios.delete(`http://localhost:5000/myItems/${id}`)
                     .then(res => {
                         console.log(res.data)
                         if (res.data.deletedCount > 0) {
@@ -39,7 +41,7 @@ const ManageMyItems = () => {
     }
 
     useEffect(() => {
-        axios(`https://where-is-it-server-side.vercel.app/myItems?email=${user?.email}`, { withCredentials: true })
+        axiosSecure(`/myItems?email=${user?.email}`, { withCredentials: true })
             .then(res => {
                 setItems(res.data)
             })

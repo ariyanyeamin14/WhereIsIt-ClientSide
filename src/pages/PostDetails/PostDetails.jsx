@@ -6,9 +6,9 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useParams } from 'react-router-dom';
 import { AuthContex } from '../../Providers/AuthProvider';
 import Swal from 'sweetalert2';
-import useAxiosSecure from '../../hooks/useAxiosSecure';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 const PostDetails = () => {
 
@@ -20,7 +20,7 @@ const PostDetails = () => {
     const [recoveredDate, setRecoveredDate] = useState(null);
     const [recoveredLocation, setRecoveredLocation] = useState("");
     const { user } = useContext(AuthContex)
-    const AxiosSecure = useAxiosSecure()
+    const axiosSecure = useAxiosSecure()
 
     const openModal = () => setIsOpen(true);
     const closeModal = () => setIsOpen(false);
@@ -39,7 +39,7 @@ const PostDetails = () => {
         };
 
         if (!status) {
-            axios.post(`https://where-is-it-server-side.vercel.app/items/${id.id}`, recoveryDetails)
+            axios.post(`http://localhost:5000/items/${id.id}`, recoveryDetails)
                 .then(res => {
                     if (res.data.modifiedCount > 0) {
                         Swal.fire({
@@ -63,7 +63,7 @@ const PostDetails = () => {
 
     };
     useEffect(() => {
-        AxiosSecure.get(`/items/${id.id}`, { withCredentials: true })
+        axiosSecure(`http://localhost:5000/items/${id.id}`, { withCredentials: true })
             .then(res => {
                 setpost(res.data)
             })

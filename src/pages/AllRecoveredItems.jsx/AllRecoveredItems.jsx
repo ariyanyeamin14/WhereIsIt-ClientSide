@@ -5,14 +5,16 @@ import { MdTableRows } from 'react-icons/md';
 import { RiLayoutGrid2Line } from 'react-icons/ri';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 const AllRecoveredItems = () => {
     const { user } = useContext(AuthContex)
     const [items, setItems] = useState([])
     const [tableFormet, setTableFormet] = useState(true)
+    const axiosSecure = useAxiosSecure()
 
     useEffect(() => {
-        axios.get(`https://where-is-it-server-side.vercel.app/recoveredItems?email=${user?.email}`, { withCredentials: true })
+        axiosSecure.get(`/recoveredItems?email=${user?.email}`, { withCredentials: true })
             .then(res => setItems(res.data))
     }, [user])
 

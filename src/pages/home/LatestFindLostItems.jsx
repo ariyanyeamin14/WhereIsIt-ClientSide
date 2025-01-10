@@ -9,7 +9,7 @@ const LatestFindLostItems = () => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        axios('https://where-is-it-server-side.vercel.app/recentItems')
+        axios('http://localhost:5000/recentItems')
             .then(res => setItems(res.data));
     }, []);
 
