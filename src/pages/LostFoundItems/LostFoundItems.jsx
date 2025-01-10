@@ -9,7 +9,7 @@ const LostFoundItems = () => {
     const [filteredItems, setFilteredItems] = useState([]); // Data after filtering
     const [searchQuery, setSearchQuery] = useState('');
     useEffect(() => {
-        axios.get('http://localhost:5000/items')
+        axios.get('https://where-is-it-server-side.vercel.app/items')
             .then((response) => {
                 setItems(response.data);
                 setFilteredItems(response.data); // Initially, all items are displayed

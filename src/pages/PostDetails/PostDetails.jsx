@@ -39,7 +39,7 @@ const PostDetails = () => {
         };
 
         if (!status) {
-            axios.post(`http://localhost:5000/items/${id.id}`, recoveryDetails)
+            axios.post(`https://where-is-it-server-side.vercel.app/items/${id.id}`, recoveryDetails)
                 .then(res => {
                     if (res.data.modifiedCount > 0) {
                         Swal.fire({
@@ -63,7 +63,7 @@ const PostDetails = () => {
 
     };
     useEffect(() => {
-        axiosSecure(`http://localhost:5000/items/${id.id}`, { withCredentials: true })
+        axiosSecure(`https://where-is-it-server-side.vercel.app/items/${id.id}`, { withCredentials: true })
             .then(res => {
                 setpost(res.data)
             })

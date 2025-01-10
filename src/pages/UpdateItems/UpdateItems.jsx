@@ -11,7 +11,7 @@ const UpdateItems = () => {
     const [selectedDate, setSelectedDate] = useState(null); // State for selected date
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/items/${id.id}`, { withCredentials: true})
+        axios.get(`https://where-is-it-server-side.vercel.app/items/${id.id}`, { withCredentials: true})
             .then(res => setItem(res.data))
     }, [id.id])
 
@@ -45,7 +45,7 @@ const UpdateItems = () => {
         };
         console.log(itemData)
 
-        axios.patch(`http://localhost:5000/items/${id.id}`, itemData)
+        axios.patch(`https://where-is-it-server-side.vercel.app/items/${id.id}`, itemData)
             .then(res => {
                 console.log(res.data)
                 if (res.data.modifiedCount > 0) {

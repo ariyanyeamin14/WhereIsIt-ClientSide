@@ -24,7 +24,7 @@ const ManageMyItems = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:5000/myItems/${id}`)
+                axios.delete(`https://where-is-it-server-side.vercel.app/myItems/${id}`)
                     .then(res => {
                         console.log(res.data)
                         if (res.data.deletedCount > 0) {

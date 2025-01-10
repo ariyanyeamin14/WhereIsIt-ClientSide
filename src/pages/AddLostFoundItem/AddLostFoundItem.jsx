@@ -38,7 +38,7 @@ const AddLostFoundItem = () => {
             status
         };
 
-        axios.post('http://localhost:5000/items', itemData)
+        axios.post('https://where-is-it-server-side.vercel.app/items', itemData)
             .then(res => {
                 console.log(res.data)
                 if (res.data.acknowledged) {
