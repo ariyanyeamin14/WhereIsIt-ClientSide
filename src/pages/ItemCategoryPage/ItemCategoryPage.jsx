@@ -3,7 +3,7 @@ import ItemCategory from '../home/ItemCategory';
 
 const ItemCategoryPage = () => {
     return (
-        <div className='min-h-screen mt-14'>
+        <div className='min-h-screen my-3 md:my-5'>
             <ItemCategory></ItemCategory>
         </div>
     );

@@ -37,7 +37,7 @@ const LostFoundItems = () => {
 
     return (
         <div className='text-center w-[90%] mx-auto my-20 md:my-32 min-h-screen'>
-            <h1 className='text-5xl font-bold text-center my-6'>Lost & Found Items</h1>
+            <h1 className='text-3xl md:text-[48px] xl:text-[60px] font-bold leading-snug mb-8 text-center'>Lost & Found Items</h1>
             <p className=' w-[90%] lg:w-[80%] mx-auto '>Browse through a collection of lost and found items posted by community members. Whether you're looking for something you lost or trying to help reunite others with their belongings, this page provides an easy way to view and connect with users about lost and found items. Simply click on a card to learn more about an item and how you can get in touch with its owner or find further details.</p>
 
             {/* Search Input */}

@@ -3,7 +3,7 @@ import AboutUs from '../home/AboutUs';
 
 const AboutPage = () => {
     return (
-        <div className='mt-14'>
+        <div className='my-3 md:my-5'>
             <AboutUs></AboutUs>
         </div>
     );

@@ -52,10 +52,10 @@ const AddLostFoundItem = () => {
             })
     }
     return (
-        <div className="hero bg-base-200 py-28">
+        <div className="hero bg-base-200 py-20 md:py-32">
             <div className="hero-content flex-col">
                 <div className="text-center ">
-                    <h1 className="text-5xl font-bold">Add Found & Lost Item</h1>
+                    <h1 className="text-3xl md:text-[48px] xl:text-[60px] font-bold leading-snug mb-8 text-center">Add Found & Lost Item</h1>
                     <p className="py-6">
                         Easily report items you've lost or found by filling out the form. Provide details like the item’s title, description, category, and location, and upload an image or provide a URL. Whether you're searching for a lost item or helping someone recover theirs.
                     </p>

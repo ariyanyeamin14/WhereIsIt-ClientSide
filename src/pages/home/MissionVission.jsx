@@ -10,7 +10,7 @@ const MissionVission = () => {
     return (
         <div className='mt-28 mb-20 text-center overflow-hidden relative'>
             <div class="relative z-10">
-                <h1 className="text-3xl lg:text-5xl font-bold text-center my-6" >
+                <h1 className="text-3xl md:text-[48px] xl:text-[60px] font-bold leading-snug mb-8 text-center" >
                     Mission & Vission
                 </h1>
                 {/* <p className="w-[90%] lg:w-[80%] mx-auto">

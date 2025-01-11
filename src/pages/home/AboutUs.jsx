@@ -30,7 +30,7 @@ const AboutUs = () => {
                 </div>
             </div>
             <div>
-                <h2 className='text-3xl md:text-[48px] xl:text-[60px] font-bold leading-snug mb-8' >How It Works?
+                <h2 className='text-4xl md:text-[48px] xl:text-[60px] font-bold leading-snug mb-8' >How It Works?
                 </h2>
                 <HowItWork></HowItWork>
             </div>

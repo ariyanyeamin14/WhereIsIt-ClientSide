@@ -27,7 +27,7 @@ const AllRecoveredItems = () => {
 
     return (
         <div className='w-[90%] mx-auto  my-20 md:my-32 text-center'>
-            <h1 className="text-5xl font-bold text-center my-6">All Recovered Items</h1>
+            <h1 className="text-3xl md:text-[48px] xl:text-[60px] font-bold leading-snug mb-8 text-center">All Recovered Items</h1>
             <p className="w-[90%] lg:w-[80%] mx-auto">
                 Easily report items you've lost or found by filling out the form. Provide details like the item’s title, description, category, and location, and upload an image or provide a URL. Whether you're searching for a lost item or helping someone recover theirs.
             </p>

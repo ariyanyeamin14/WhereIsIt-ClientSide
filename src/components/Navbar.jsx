@@ -73,7 +73,7 @@ const Navbar = () => {
                         }
                     </div>
                     <div>
-                        <LuSquareMenu color='' className='text-[#ec570d] dark:text-[#f0f647] lg:hidden' onClick={() => handleMobileMenu()} size={30} />
+                        <LuSquareMenu color='' className='text-[#ec570d] lg:hidden' onClick={() => handleMobileMenu()} size={30} />
                     </div>
                     <div onClick={() => setDropdown(!dropdown)} className={` bg-[#ec570d]  absolute top-14 right-10 z-10 p-6 rounded-xl transform transition-all duration-600   ${dropdown ? "scale-100 opacity-100" : "scale-0 opacity-0 pointer-events-none -z-10"}`}>
                         <ul className='cursor-pointer text-white dark:text-black grid gap-5'>

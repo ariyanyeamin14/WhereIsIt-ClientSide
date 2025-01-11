@@ -24,7 +24,7 @@ const LatestFindLostItems = () => {
     return (
         <div>
             <div className="text-center w-[90%] mx-auto py-20">
-                <h1 className="text-3xl lg:text-5xl font-bold text-center my-6" >
+                <h1 className="text-3xl md:text-[48px] xl:text-[60px] font-bold leading-snug mb-8 text-center" >
                     Latest Lost & Found Items
                 </h1>
                 <p

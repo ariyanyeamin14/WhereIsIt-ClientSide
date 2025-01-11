@@ -65,7 +65,7 @@ const HowItWork = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.5 }}
-                className="mt-6 p-16 leading-relaxed rounded-lg shadow-md bg-[#191e24]"
+                className="mt-6 p-8 lg:p-16 leading-relaxed rounded-lg shadow-md bg-[#191e24]"
             >
                 {activeTab.content}
             </motion.div>

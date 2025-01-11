@@ -30,7 +30,7 @@ const ItemCategory = () => {
 
     return (
         <div className="w-[90%] mx-auto py-20">
-            <h2 className='text-3xl md:text-[48px] text-center xl:text-[60px] font-bold leading-snug mb-8' >Item Category
+            <h2 className='text-3xl md:text-[48px] xl:text-[60px] font-bold leading-snug mb-8 text-center' >Item Category
             </h2>
             {/* Tab Navigation */}
             <div className="my-16 flex justify-center flex-wrap gap-3 md:gap-5">

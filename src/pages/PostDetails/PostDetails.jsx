@@ -110,7 +110,7 @@ const PostDetails = () => {
                             src={thumbnail}
                             alt="Album" />
                     </figure>
-                    <div className="card-body text-left">
+                    <div className="card-body text-left overflow-hidden">
                         <h2 data-aos="fade-left" data-aos-delay="0" className="card-title mb-10">{description}</h2>
                         <p data-aos="fade-left" data-aos-delay="200">
                             {isLost ? 'Lost on' : 'Found on '} {location}

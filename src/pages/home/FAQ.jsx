@@ -51,7 +51,7 @@ const FAQ = () => {
 
     return (
         <div className="w-[90%] mx-auto py-20">
-            <h2 className="text-3xl lg:text-5xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+            <h2 className="text-3xl md:text-[48px] xl:text-[60px] font-bold leading-snug mb-8 text-center">Frequently Asked Questions</h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 justify-between items-center ">
                 <div>
                     <div className="w-[90%] md:w-[90%] mx-auto">
