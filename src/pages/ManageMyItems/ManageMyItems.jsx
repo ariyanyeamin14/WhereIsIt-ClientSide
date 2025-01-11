@@ -94,7 +94,7 @@ const ManageMyItems = () => {
                 </div>
                 <div>
                     {
-                        items.length < 1 ? <h1 className='text-5xl text-white font-bold'>You haven't added any item</h1> : <h1></h1>
+                        items.length < 1 ? <h1 className='text-5xl min-h-screen text-white font-bold'>You haven't added any item</h1> : <h1></h1>
                     }
                 </div>
             </div>

@@ -1,17 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import slider1 from "../../assets/slider image/1-Black-leather-wallet.jpeg"
 import slider2 from "../../assets/slider image/11-Canon-DSLR.jpeg"
-import { BiSolidDonateHeart } from "react-icons/bi";
 import HowItWork from './HowItWorks';
-import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
+import Aos from 'aos';
 
 const AboutUs = () => {
 
+    useEffect(() => {
+            Aos.init({
+                duration: 1000, // Animation duration in milliseconds
+                offset: 50,     // Offset from the viewport
+            });
+        }, []);
     return (
-        <div className='grid grid-cols-subgrid xl:grid-cols-2 gap-8 w-[90%] xl:w-[85%] mx-auto py-20'>
+        <div className='grid grid-cols-subgrid xl:grid-cols-2 gap-8 w-[90%] xl:w-[85%] mx-auto py-20 overflow-hidden'>
             <div className='xl:relative hidden md:block'>
-                <div >
+                <div data-aos="fade-right">
                     <motion.img
                         animate={{ y: [50, 100, 50] }}
                         transition={{ duration: 10, repeat: Infinity }}
@@ -28,9 +33,6 @@ const AboutUs = () => {
                 <h2 className='text-3xl md:text-[48px] xl:text-[60px] font-bold leading-snug mb-8' >How It Works?
                 </h2>
                 <HowItWork></HowItWork>
-                <div className='mt-10'>
-                    <Link to={'/addItems'} className=' w-full btn bg-[#ec570d] text-white  rounded-full  mt-10 cursor-pointer'>Create Post</Link>
-                </div>
             </div>
         </div>
     );

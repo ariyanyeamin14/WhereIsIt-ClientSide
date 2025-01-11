@@ -7,7 +7,7 @@ const PostCard = ({ post, aosDelay }) => {
     return (
         <div
             id='card'
-            data-aos="zoom-in-up"
+            data-aos="fade-up"
             data-aos-delay={aosDelay}
             className="card glass"
         >

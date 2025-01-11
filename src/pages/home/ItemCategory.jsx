@@ -33,7 +33,7 @@ const ItemCategory = () => {
             <h2 className='text-3xl md:text-[48px] text-center xl:text-[60px] font-bold leading-snug mb-8' >Item Category
             </h2>
             {/* Tab Navigation */}
-            <div className="my-16 flex justify-center">
+            <div className="my-16 flex justify-center flex-wrap gap-3 md:gap-5">
                 {categories.map((category) => (
                     <button
                         key={category}
@@ -63,7 +63,7 @@ const ItemCategory = () => {
                     exit={{ scale: 0.8, opacity: 0 }} // Shrink when exiting
                     transition={{ duration: 0.5, ease: "easeInOut" }} // Smooth transition
                 >
-                    <div className="grid grid-cols-3 gap-3">
+                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
                         {filteredItems.map((item) => (
                             <div key={item._id} className="relative group">
                                 {/* Image */}

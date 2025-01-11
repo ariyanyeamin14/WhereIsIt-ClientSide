@@ -2,8 +2,8 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import PostCard from '../LostFoundItems/PostCard';
 import { Link } from 'react-router-dom';
-import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Aos from 'aos';
 
 const LatestFindLostItems = () => {
     const [items, setItems] = useState([]);
@@ -14,9 +14,10 @@ const LatestFindLostItems = () => {
     }, []);
 
     useEffect(() => {
-        AOS.init({
+        Aos.init({
             duration: 1000,
-            offset: 50,    
+            offset: 50, 
+            once: false,   
         });
     }, []);
 

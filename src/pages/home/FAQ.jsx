@@ -62,7 +62,7 @@ const FAQ = () => {
                     <div className="space-y-4">
                         {faqs.map((faq, index) => (
                             <div data-aos="fade-left"
-                            data-aos-delay={index * 200}   key={index} className="border rounded-lg p-4">
+                            data-aos-delay={index * 200}  key={index} className="border rounded-lg p-4">
                                 <div
                                     className="flex justify-between items-center cursor-pointer"
                                     onClick={() => toggleFAQ(index)}

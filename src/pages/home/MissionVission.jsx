@@ -17,7 +17,7 @@ const MissionVission = () => {
                     Our mission is to reconnect people with their lost belongings through an easy-to-use platform that bridges the gap between those who have lost and found items.
                     We envision a world where no cherished possession remains lost. By leveraging technology and community, we aim to simplify recoveries, foster trust, and redefine the lost-and-found experience.
                 </p> */}
-                <div className='grid grid-cols-3 gap-16 my-20 w-[90%] mx-auto'>
+                <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 xl:gap-16 my-20 w-[90%] mx-auto'>
                     {
                         content.map((cart, index) => <MissionVissionCart cart={cart} index={index} key={index}></MissionVissionCart> )
                     }

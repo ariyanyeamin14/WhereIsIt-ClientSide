@@ -1,19 +1,28 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import Aos from 'aos';
+import { Link } from 'react-router-dom';
 
 const HowItWork = () => {
+    useEffect(() => {
+        Aos.init({
+            duration: 1000, // Animation duration in milliseconds
+            offset: 50,     // Offset from the viewport
+        });
+    }, []);
+
     const retuenContent = <ul className='space-y-4 '>
-        <h1 className='text-xl'>If you had found somthing :</h1>
-        <li>1. Create a post detailing the item you found, including a description, photos, and the location where it was discovered. </li>
-        <li>2. Add any distinguishing features that can help the owner identify the item. </li>
-        <li>3. Wait for potential matches or responses from users who may have lost the item.</li>
+        <h1 data-aos="fade-left" data-aos-delay="0" className='text-xl'>If you had found somthing :</h1>
+        <li data-aos="fade-left" data-aos-delay="200">1. Create a post detailing the item you found, including a description, photos, and the location where it was discovered. </li>
+        <li data-aos="fade-left" data-aos-delay="400">2. Add any distinguishing features that can help the owner identify the item. </li>
+        <li data-aos="fade-left" data-aos-delay="600">3. Wait for potential matches or responses from users who may have lost the item.</li>
     </ul>
 
     const findContent = <ul className='space-y-4 '>
-        <h1 className='text-xl'>If you had lost somthing :</h1>
-        <li>1. Browse through posts in the "Lost And Found Items" page to check if someone has found your item. </li>
-        <li>2. Use advanced filters like location, category, and keywords to narrow down your search. </li>
-        <li>3. Post a detailed report about the item you’ve lost, including photos, description, and where it might have gone missing.</li>
+        <h1 data-aos="fade-left" data-aos-delay="0" className='text-xl'>If you had lost somthing :</h1>
+        <li data-aos="fade-left" data-aos-delay="200">1. Browse through posts in the "Lost And Found Items" page to check if someone has found your item. </li>
+        <li data-aos="fade-left" data-aos-delay="400">2. Use advanced filters like location, category, and keywords to narrow down your search. </li>
+        <li data-aos="fade-left" data-aos-delay="600">3. Post a detailed report about the item you’ve lost, including photos, description, and where it might have gone missing.</li>
     </ul>
 
     const tabs = [
@@ -60,6 +69,9 @@ const HowItWork = () => {
             >
                 {activeTab.content}
             </motion.div>
+            <div className='mt-10'>
+                <Link data-aos="fade-left" data-aos-delay="600" to={'/addItems'} className=' w-full btn bg-[#ec570d] text-white  rounded-full  mt-10 cursor-pointer'>Create Post</Link>
+            </div>
         </div>
     );
 };
